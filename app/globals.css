@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -11,4 +13,56 @@
 body {
   background: #F5F0EB;
   min-height: 100vh;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Input focus styles — override inline border without touching outline */
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #7C4DFF !important;
+  box-shadow: 0 0 0 3px rgba(124, 77, 255, 0.15) !important;
+  outline: none !important;
+}
+
+/* Hide scrollbar on tab bar (webkit + firefox) */
+.tab-bar::-webkit-scrollbar {
+  display: none;
+}
+.tab-bar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* Screen-reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Tab-switch fade animation */
+@keyframes pageIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.page-fade {
+  animation: pageIn 0.2s ease both;
+}
+
+/* Checkbox pop on toggle */
+@keyframes checkPop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.25); }
+  100% { transform: scale(1); }
+}
+.check-pop {
+  animation: checkPop 0.2s ease both;
 }
